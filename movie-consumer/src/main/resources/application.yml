@@ -16,3 +16,10 @@ logging:
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+info:
+  app:
+    name: @project.artifactId@
+    java:
+      source: @java.version@
+      target: @java.version@
