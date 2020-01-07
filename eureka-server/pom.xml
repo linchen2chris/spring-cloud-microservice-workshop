@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.clin</groupId>
-	<artifactId>sample</artifactId>
+	<artifactId>eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sample</name>
+	<name>eureka-server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -31,6 +31,19 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<!-- spring cloud dependencies -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR4</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
