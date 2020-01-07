@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(value = "user-service")
-public interface MovieServiceFeign {
+public interface UserServiceFeignClient {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public User getUser(@PathVariable("id") Long id);

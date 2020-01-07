@@ -1,6 +1,6 @@
 package com.clin.sample.controller;
 
-import com.clin.sample.MovieServiceFeign;
+import com.clin.sample.UserServiceFeignClient;
 import com.clin.sample.model.User;
 
 import org.slf4j.Logger;
@@ -18,7 +18,7 @@ public class MovieController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MovieController.class);
 
 	@Autowired
-	private MovieServiceFeign client;
+	private UserServiceFeignClient client;
 
 	@Autowired
 	private LoadBalancerClient loadbalanceClient;
