@@ -1,23 +1,23 @@
 #+BEGIN_SRC restclient
-GET http://localhost:8001/user/1
+GET http://localhost:8001/user/2
 #+END_SRC
 
 #+RESULTS:
 #+BEGIN_SRC js
 {
-  "id": 1,
-  "username": "account1",
-  "name": "张三",
-  "age": 20,
+  "id": 2,
+  "username": "account2",
+  "name": "李四",
+  "age": 26,
   "balance": 100.0
 }
-// GET http://localhost:8001/user/1
+// GET http://localhost:8001/user/2
 // HTTP/1.1 200 
 // X-Application-Context: movie-service:8001
 // Content-Type: application/json;charset=UTF-8
 // Transfer-Encoding: chunked
-// Date: Tue, 07 Jan 2020 07:26:00 GMT
-// Request duration: 0.740224s
+// Date: Tue, 07 Jan 2020 15:51:56 GMT
+// Request duration: 0.494556s
 #+END_SRC
 
 
