@@ -1,0 +1,114 @@
+#+BEGIN_SRC restclient
+GET http://localhost:8761/eureka/apps
+Accept: application/json
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "applications": {
+    "versions__delta": "1",
+    "apps__hashcode": "UP_2_",
+    "application": [
+      {
+        "name": "USER-SERVICE",
+        "instance": [
+          {
+            "instanceId": "192.168.1.8:user-service:8000",
+            "hostName": "192.168.1.8",
+            "app": "USER-SERVICE",
+            "ipAddr": "192.168.1.8",
+            "status": "UP",
+            "overriddenstatus": "UNKNOWN",
+            "port": {
+              "$": 8000,
+              "@enabled": "true"
+            },
+            "securePort": {
+              "$": 443,
+              "@enabled": "false"
+            },
+            "countryId": 1,
+            "dataCenterInfo": {
+              "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+              "name": "MyOwn"
+            },
+            "leaseInfo": {
+              "renewalIntervalInSecs": 30,
+              "durationInSecs": 90,
+              "registrationTimestamp": 1578369806085,
+              "lastRenewalTimestamp": 1578377008758,
+              "evictionTimestamp": 0,
+              "serviceUpTimestamp": 1578369805467
+            },
+            "metadata": {
+              "@class": "java.util.Collections$EmptyMap"
+            },
+            "homePageUrl": "http://192.168.1.8:8000/",
+            "statusPageUrl": "http://192.168.1.8:8000/info",
+            "healthCheckUrl": "http://192.168.1.8:8000/health",
+            "vipAddress": "user-service",
+            "secureVipAddress": "user-service",
+            "isCoordinatingDiscoveryServer": "false",
+            "lastUpdatedTimestamp": "1578369806086",
+            "lastDirtyTimestamp": "1578369805304",
+            "actionType": "ADDED"
+          }
+        ]
+      },
+      {
+        "name": "MOVIE-SERVICE",
+        "instance": [
+          {
+            "instanceId": "192.168.1.8:movie-service:8001",
+            "hostName": "192.168.1.8",
+            "app": "MOVIE-SERVICE",
+            "ipAddr": "192.168.1.8",
+            "status": "UP",
+            "overriddenstatus": "UNKNOWN",
+            "port": {
+              "$": 8001,
+              "@enabled": "true"
+            },
+            "securePort": {
+              "$": 443,
+              "@enabled": "false"
+            },
+            "countryId": 1,
+            "dataCenterInfo": {
+              "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+              "name": "MyOwn"
+            },
+            "leaseInfo": {
+              "renewalIntervalInSecs": 30,
+              "durationInSecs": 90,
+              "registrationTimestamp": 1578370469855,
+              "lastRenewalTimestamp": 1578377011488,
+              "evictionTimestamp": 0,
+              "serviceUpTimestamp": 1578370469343
+            },
+            "metadata": {
+              "@class": "java.util.Collections$EmptyMap"
+            },
+            "homePageUrl": "http://192.168.1.8:8001/",
+            "statusPageUrl": "http://192.168.1.8:8001/info",
+            "healthCheckUrl": "http://192.168.1.8:8001/health",
+            "vipAddress": "movie-service",
+            "secureVipAddress": "movie-service",
+            "isCoordinatingDiscoveryServer": "false",
+            "lastUpdatedTimestamp": "1578370469856",
+            "lastDirtyTimestamp": "1578370469297",
+            "actionType": "ADDED"
+          }
+        ]
+      }
+    ]
+  }
+}
+// GET http://localhost:8761/eureka/apps
+// HTTP/1.1 200 
+// Content-Type: application/json
+// Transfer-Encoding: chunked
+// Date: Tue, 07 Jan 2020 06:04:26 GMT
+// Request duration: 0.003021s
+#+END_SRC
