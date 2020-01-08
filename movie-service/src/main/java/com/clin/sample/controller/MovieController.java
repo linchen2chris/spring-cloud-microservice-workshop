@@ -10,6 +10,8 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,10 +29,15 @@ public class MovieController {
 	public User findById(@PathVariable("id") Long id) {
 		return this.client.getUser(id);
 	}
+	@PostMapping("/user/create")
+	public User createUser(@RequestBody() User user) {
+		return this.client.createUser(user);
+	}
 
 	@GetMapping("/log-instance")
 	public void logUserIntance() {
 		ServiceInstance serviceInstance = this.loadbalanceClient.choose("user-service");
 		MovieController.LOGGER.info("chen{}:{}:{}", serviceInstance.getServiceId(), serviceInstance.getHost(), serviceInstance.getPort());
 	}
+
 }

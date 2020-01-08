@@ -1,25 +1,53 @@
 #+BEGIN_SRC restclient
-GET http://localhost:8001/user/2
+GET http://localhost:8001/user/8
 #+END_SRC
 
 #+RESULTS:
 #+BEGIN_SRC js
 {
-  "id": 2,
-  "username": "account2",
-  "name": "李四",
-  "age": 26,
-  "balance": 100.0
+  "id": 8,
+  "username": "account12",
+  "name": "王二",
+  "age": 16,
+  "balance": 12001.0
 }
-// GET http://localhost:8001/user/2
+// GET http://localhost:8001/user/8
 // HTTP/1.1 200 
 // X-Application-Context: movie-service:8001
 // Content-Type: application/json;charset=UTF-8
 // Transfer-Encoding: chunked
-// Date: Tue, 07 Jan 2020 15:51:56 GMT
-// Request duration: 0.494556s
+// Date: Wed, 08 Jan 2020 06:25:44 GMT
+// Request duration: 0.019216s
 #+END_SRC
 
+#+BEGIN_SRC restclient
+POST http://localhost:8001/user/create
+content-type: application/json
+{
+  "username": "account12",
+  "name": "王二",
+  "age": 16,
+  "balance": 12001.0
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "id": 8,
+  "username": "account12",
+  "name": "王二",
+  "age": 16,
+  "balance": 12001.0
+}
+// POST http://localhost:8001/user/create
+// HTTP/1.1 200 
+// X-Application-Context: movie-service:8001
+// Content-Type: application/json;charset=UTF-8
+// Transfer-Encoding: chunked
+// Date: Wed, 08 Jan 2020 06:25:38 GMT
+// Request duration: 0.041586s
+#+END_SRC
 
 #+BEGIN_SRC restclient
 GET http://localhost:8001/log-instance
