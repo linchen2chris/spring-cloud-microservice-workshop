@@ -4,12 +4,10 @@ import com.clin.sample.entity.User;
 import com.clin.sample.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class UserController {
+class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
@@ -21,4 +19,12 @@ public class UserController {
 		System.out.println("------->${id}" + user.toString());
 		return user;
 	}
+
+	@PostMapping("/register")
+	public User createUser(@RequestBody() User user) {
+		System.out.println("Line 26: " + user.toString());
+
+		return this.userRepository.save(user);
+	}
+
 }

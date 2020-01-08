@@ -1,20 +1,51 @@
 #+BEGIN_SRC restclient
-GET http://localhost:8080/1
+GET http://localhost:8000/7
 #+END_SRC
 
 #+RESULTS:
 #+BEGIN_SRC js
 {
-  "id": 1,
-  "username": "account1",
-  "name": "张三",
-  "age": 20,
-  "balance": 100.0
+  "id": 7,
+  "username": "account12",
+  "name": "王二",
+  "age": 34,
+  "balance": 1202.0
 }
-// GET http://localhost:8080/1
+// GET http://localhost:8000/7
 // HTTP/1.1 200 
+// X-Application-Context: user-service:8000
 // Content-Type: application/json;charset=UTF-8
 // Transfer-Encoding: chunked
-// Date: Mon, 06 Jan 2020 07:46:51 GMT
-// Request duration: 0.012415s
+// Date: Wed, 08 Jan 2020 05:31:50 GMT
+// Request duration: 0.012158s
+#+END_SRC
+
+#+BEGIN_SRC restclient
+POST http://localhost:8000/register
+content-type: application/json
+
+{
+  "username": "account12",
+  "name": "王二",
+  "age": 34,
+  "balance": 1202.0
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "id": 7,
+  "username": "account12",
+  "name": "王二",
+  "age": 34,
+  "balance": 1202.0
+}
+// POST http://localhost:8000/register
+// HTTP/1.1 200 
+// X-Application-Context: user-service:8000
+// Content-Type: application/json;charset=UTF-8
+// Transfer-Encoding: chunked
+// Date: Wed, 08 Jan 2020 05:31:42 GMT
+// Request duration: 0.010954s
 #+END_SRC
