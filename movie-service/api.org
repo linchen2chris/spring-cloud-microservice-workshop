@@ -16,8 +16,8 @@ GET http://localhost:8001/user/8
 // X-Application-Context: movie-service:8001
 // Content-Type: application/json;charset=UTF-8
 // Transfer-Encoding: chunked
-// Date: Wed, 08 Jan 2020 07:54:09 GMT
-// Request duration: 0.007996s
+// Date: Wed, 08 Jan 2020 08:05:53 GMT
+// Request duration: 0.513760s
 #+END_SRC
 
 #+BEGIN_SRC restclient
