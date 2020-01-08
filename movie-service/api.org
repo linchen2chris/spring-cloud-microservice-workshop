@@ -5,19 +5,19 @@ GET http://localhost:8001/user/8
 #+RESULTS:
 #+BEGIN_SRC js
 {
-  "id": 8,
-  "username": "account12",
-  "name": "王二",
-  "age": 16,
-  "balance": 12001.0
+  "id": -1,
+  "username": null,
+  "name": "defaultUser",
+  "age": null,
+  "balance": null
 }
 // GET http://localhost:8001/user/8
 // HTTP/1.1 200 
 // X-Application-Context: movie-service:8001
 // Content-Type: application/json;charset=UTF-8
 // Transfer-Encoding: chunked
-// Date: Wed, 08 Jan 2020 06:25:44 GMT
-// Request duration: 0.019216s
+// Date: Wed, 08 Jan 2020 07:54:09 GMT
+// Request duration: 0.007996s
 #+END_SRC
 
 #+BEGIN_SRC restclient

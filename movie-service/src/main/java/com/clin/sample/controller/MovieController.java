@@ -2,6 +2,7 @@ package com.clin.sample.controller;
 
 import com.clin.sample.UserServiceFeignClient;
 import com.clin.sample.model.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,7 @@ public class MovieController {
 	@Autowired
 	private LoadBalancerClient loadbalanceClient;
 
+	@HystrixCommand(fallbackMethod = "findByIdFallback")
 	@GetMapping("/user/{id}")
 	public User findById(@PathVariable("id") Long id) {
 		return this.client.getUser(id);
@@ -38,6 +40,15 @@ public class MovieController {
 	public void logUserIntance() {
 		ServiceInstance serviceInstance = this.loadbalanceClient.choose("user-service");
 		MovieController.LOGGER.info("chen{}:{}:{}", serviceInstance.getServiceId(), serviceInstance.getHost(), serviceInstance.getPort());
+	}
+
+	public User findByIdFallback(Long id) {
+		User user = new User();
+		user.setId(-1L);
+		user.setName(null);
+		user.setAge(null);
+		user.setName("defaultUser");
+		return user;
 	}
 
 }
