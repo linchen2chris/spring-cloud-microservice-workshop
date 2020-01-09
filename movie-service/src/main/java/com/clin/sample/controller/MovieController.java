@@ -7,6 +7,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,11 +21,19 @@ public class MovieController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(MovieController.class);
 
+	@Value("${profiles}")
+	private String profile;
+
 	@Autowired
 	private UserServiceFeignClient client;
 
 	@Autowired
 	private LoadBalancerClient loadbalanceClient;
+
+	@GetMapping("/profiles")
+	public String getProfile() {
+		return this.profile;
+	}
 
 	@HystrixCommand(fallbackMethod = "findByIdFallback")
 	@GetMapping("/user/{id}")

@@ -62,3 +62,19 @@ GET http://localhost:8001/log-instance
 // Date: Tue, 07 Jan 2020 07:34:00 GMT
 // Request duration: 0.006123s
 #+END_SRC
+
+#+BEGIN_SRC restclient
+GET http://localhost:8001/profiles
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC text
+qe
+GET http://localhost:8001/profiles
+HTTP/1.1 200 
+X-Application-Context: movie-service:8001
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 2
+Date: Thu, 09 Jan 2020 11:28:03 GMT
+Request duration: 0.014485s
+#+END_SRC
