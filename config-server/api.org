@@ -1,0 +1,33 @@
+#+BEGIN_SRC restclient
+GET http://localhost:8080/user-service/dev
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "name": "user-service",
+  "profiles": [
+    "dev"
+  ],
+  "label": "master",
+  "version": "83fb4fe4639bdf344ccb44d656c71a9578a7ffa2",
+  "state": null,
+  "propertySources": [
+    {
+      "name": "https://github.com/linchen2chris/spring-cloud-config-server.git/user-service-dev.yml",
+      "source": {
+        "profile": "dev",
+        "toggle": true
+      }
+    }
+  ]
+}
+// GET http://localhost:8080/user-service/dev
+// HTTP/1.1 200 
+// X-Application-Context: config-server:8080
+// Content-Type: application/json;charset=UTF-8
+// Transfer-Encoding: chunked
+// Date: Thu, 09 Jan 2020 11:13:00 GMT
+// Request duration: 2.615217s
+#+END_SRC
