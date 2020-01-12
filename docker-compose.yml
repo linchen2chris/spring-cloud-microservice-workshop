@@ -1,0 +1,12 @@
+version: '2'
+services:
+  discovery:
+    image: eureka-server
+    ports:
+      - "8761:8761"
+  user-service:
+    image: user-service
+  movie-service:
+    image: movie-service
+  zuul-gateway:
+    image: zuul-gateway
