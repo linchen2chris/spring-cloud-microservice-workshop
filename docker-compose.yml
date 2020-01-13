@@ -6,7 +6,13 @@ services:
       - "8761:8761"
   user-service:
     image: user-service
+    ports:
+      - "8000:8000"
   movie-service:
     image: movie-service
+    ports:
+      - "8001:8001"
   zuul-gateway:
     image: zuul-gateway
+    ports:
+      - "8040:8040"
