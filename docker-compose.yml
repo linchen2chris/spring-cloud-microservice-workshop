@@ -16,3 +16,8 @@ services:
     image: zuul-gateway
     ports:
       - "8040:8040"
+  config-server:
+    image: config-server
+    ports:
+      - "8080:8080"
+
